@@ -1,51 +1,35 @@
 package com.cadastro.relacional.empresa.entity;
 
 import com.cadastro.relacional.empresa.entity.enums.SituacaoEmpresa;
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
-@Entity
-@Table(name = "tb_empresa")
+@Document
 public class Empresa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "cnpj", nullable = false)
+    private String id;
     private String cnpj;
-
-    @Column(name = "razao_social", nullable = false)
     private String razaoSocial;
-
-    @Column(name = "nome_fantasia", nullable = false)
     private String nomeFantasia;
-
-    @Column(name = "telefone", nullable = true)
     private String telefone;
 
-    @Column(name = "data_fundacao", nullable = false)
-    private LocalDate dataFundacao;
-
-    @Column(name = "email", unique = true, nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date dataFundacao;
     private String email;
-
-    @Column(name = "situacao_empresa", nullable = false)
-    @Enumerated(EnumType.STRING)
     private SituacaoEmpresa situacaoEmpresa;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id", nullable = false)
     private Endereco endereco;
 
-    public Long getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -81,11 +65,11 @@ public class Empresa {
         this.telefone = telefone;
     }
 
-    public LocalDate getDataFundacao() {
+    public Date getDataFundacao() {
         return dataFundacao;
     }
 
-    public void setDataFundacao(LocalDate dataFundacao) {
+    public void setDataFundacao(Date dataFundacao) {
         this.dataFundacao = dataFundacao;
     }
 

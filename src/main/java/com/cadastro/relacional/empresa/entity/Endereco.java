@@ -1,46 +1,15 @@
 package com.cadastro.relacional.empresa.entity;
 
-import jakarta.persistence.*;
-
-import java.util.Objects;
-
-@Entity
-@Table(name = "tb_endereco")
 public class Endereco {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "rua", nullable = false)
     private String rua;
-
-    @Column(name = "numero", nullable = false)
     private String numero;
-
-    @Column(name = "complemento", nullable = true)
     private String complemento;
-
-    @Column(name = "bairro", nullable = false)
     private String bairro;
-
-    @Column(name = "cidade", nullable = false)
     private String cidade;
-
-    @Column(name = "estado", nullable = false)
     private String estado;
-
-    @Column(name = "cep", nullable = false)
     private String cep;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getRua() {
         return rua;
@@ -98,16 +67,4 @@ public class Endereco {
         this.cep = cep;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Endereco endereco = (Endereco) o;
-        return Objects.equals(id, endereco.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }

@@ -22,7 +22,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -58,10 +60,10 @@ class EmpresaControllerTest {
                 .build();
 
         EnderecoResponseDTO enderecoResponseDTO = new EnderecoResponseDTO(
-                1L, "Rua Exemplo", "123", "Apto 45", "Bairro Exemplo", "Cidade Exemplo", "SP", "12345678"
+                 "Rua Exemplo", "123", "Apto 45", "Bairro Exemplo", "Cidade Exemplo", "SP", "12345678"
         );
 
-        LocalDate dataFundacao = LocalDate.parse("2025-01-01");
+        Date dataFundacao = Date.from(LocalDate.parse("2025-01-01").atStartOfDay(ZoneId.systemDefault()).toInstant());
         SituacaoEmpresa situacao = SituacaoEmpresa.toEnum("A");
 
         empresaResponseDTO = new EmpresaResponseDTO();
@@ -90,7 +92,6 @@ class EmpresaControllerTest {
                                 "  \"dataFundacao\": \"2025-01-01\",\n" +
                                 "  \"situacaoEmpresa\": \"ATIVO\",\n" +
                                 "  \"endereco\": {\n" +
-                                "    \"id\": 1,\n" +
                                 "    \"rua\": \"Rua Exemplo\",\n" +
                                 "    \"numero\": \"123\",\n" +
                                 "    \"complemento\": \"Apto 45\",\n" +
@@ -120,16 +121,15 @@ class EmpresaControllerTest {
     @Test
     void testAtualizarEmpresa() throws Exception {
         EmpresaResponseDTO empresaResponseDTO = new EmpresaResponseDTO(
-                1L,
+                 "65c3a4f7d5a4b01234567890",
                 "38680589000199",
                 "Razão Social Exemplo Atualizada",
                 "Nome Fantasia Exemplo Atualizado",
                 "1122334455",
-                LocalDate.of(2025, 1, 1),
+                Date.from(LocalDate.of(2025, 1, 1).atStartOfDay(ZoneId.systemDefault()).toInstant()),
                 "empresa@exemplo.com",
                 SituacaoEmpresa.ATIVO,
                 new EnderecoResponseDTO(
-                        1L,
                         "Rua Exemplo Atualizada",
                         "123",
                         "Apto 45",
@@ -153,7 +153,6 @@ class EmpresaControllerTest {
                                 "  \"dataFundacao\": \"2025-01-01\",\n" +
                                 "  \"situacaoEmpresa\": \"ATIVO\",\n" +
                                 "  \"endereco\": {\n" +
-                                "    \"id\": 1,\n" +
                                 "    \"rua\": \"Rua Exemplo Atualizada\",\n" +
                                 "    \"numero\": \"123\",\n" +
                                 "    \"complemento\": \"Apto 45\",\n" +
@@ -192,16 +191,15 @@ class EmpresaControllerTest {
     @Test
     void testBuscarPorCnpj() throws Exception {
         EmpresaResponseDTO empresaResponseDTO = new EmpresaResponseDTO(
-                1L,
+                "65c3a4f7d5a4b01234567890",
                 "38680589000199",
                 "Razão Social Exemplo",
                 "Nome Fantasia Exemplo",
                 "1122334455",
-                LocalDate.of(2025, 1, 1),
+                Date.from(LocalDate.of(2025, 1, 1).atStartOfDay(ZoneId.systemDefault()).toInstant()),
                 "empresa@exemplo.com",
                 SituacaoEmpresa.ATIVO,
                 new EnderecoResponseDTO(
-                        1L,
                         "Rua Exemplo",
                         "123",
                         "Apto 45",
@@ -252,16 +250,15 @@ class EmpresaControllerTest {
 
         List<EmpresaResponseDTO> empresas = Arrays.asList(
                 new EmpresaResponseDTO(
-                        1L,
+                        "65c3a4f7d5a4b01234567890",
                         "38680589000199",
                         "Razão Social Exemplo 1",
                         "Nome Fantasia Exemplo 1",
                         "1122334455",
-                        LocalDate.of(2025, 1, 1),
+                        Date.from(LocalDate.of(2025, 1, 1).atStartOfDay(ZoneId.systemDefault()).toInstant()),
                         "empresa1@exemplo.com",
                         SituacaoEmpresa.ATIVO,
                         new EnderecoResponseDTO(
-                                1L,
                                 "Rua Exemplo 1",
                                 "123",
                                 "Apto 45",
@@ -272,16 +269,15 @@ class EmpresaControllerTest {
                         )
                 ),
                 new EmpresaResponseDTO(
-                        2L,
+                        "65c3a4f7d5a4b012345678901",
                         "38680589000200",
                         "Razão Social Exemplo 2",
                         "Nome Fantasia Exemplo 2",
                         "1122334456",
-                        LocalDate.of(2025, 2, 2),
+                        Date.from(LocalDate.of(2025, 1, 1).atStartOfDay(ZoneId.systemDefault()).toInstant()),
                         "empresa2@exemplo.com",
                         SituacaoEmpresa.ATIVO,
                         new EnderecoResponseDTO(
-                                2L,
                                 "Rua Exemplo 2",
                                 "124",
                                 "Apto 46",
@@ -314,16 +310,15 @@ class EmpresaControllerTest {
 
         List<EmpresaResponseDTO> empresas = Arrays.asList(
                 new EmpresaResponseDTO(
-                        1L,
+                        "65c3a4f7d5a4b01234567890",
                         "38680589000199",
                         "Razão Social Exemplo 1",
                         "Nome Fantasia Exemplo 1",
                         "1122334455",
-                        LocalDate.of(2025, 1, 1),
+                        Date.from(LocalDate.of(2025, 1, 1).atStartOfDay(ZoneId.systemDefault()).toInstant()),
                         "empresa1@exemplo.com",
                         SituacaoEmpresa.ATIVO,
                         new EnderecoResponseDTO(
-                                1L,
                                 "Rua Exemplo 1",
                                 "123",
                                 "Apto 45",
@@ -334,16 +329,15 @@ class EmpresaControllerTest {
                         )
                 ),
                 new EmpresaResponseDTO(
-                        2L,
+                        "65c3a4f7d5a4b012345678901",
                         "38680589000200",
                         "Razão Social Exemplo 2",
                         "Nome Fantasia Exemplo 2",
                         "1122334456",
-                        LocalDate.of(2025, 2, 2),
+                        Date.from(LocalDate.of(2025, 1, 1).atStartOfDay(ZoneId.systemDefault()).toInstant()),
                         "empresa2@exemplo.com",
                         SituacaoEmpresa.ATIVO,
                         new EnderecoResponseDTO(
-                                2L,
                                 "Rua Exemplo 2",
                                 "124",
                                 "Apto 46",

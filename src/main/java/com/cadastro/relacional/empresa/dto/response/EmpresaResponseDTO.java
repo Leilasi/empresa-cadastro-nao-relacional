@@ -5,23 +5,24 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 
 public class EmpresaResponseDTO implements Serializable {
     private static final long serialVersionUID = 1L;
-        private Long id;
+        private String id;
         private String cnpj;
         private String razaoSocial;
         private String nomeFantasia;
         private String telefone;
         @JsonFormat(pattern = "yyyy-MM-dd")
-        private LocalDate dataFundacao;
+        private Date dataFundacao;
         private String email;
         private SituacaoEmpresa situacaoEmpresa;
         private EnderecoResponseDTO endereco;
 
 
-    public EmpresaResponseDTO(Long id, String cnpj, String razaoSocial, String nomeFantasia, String telefone, LocalDate dataFundacao, String email, SituacaoEmpresa situacaoEmpresa, EnderecoResponseDTO endereco) {
+    public EmpresaResponseDTO(String id, String cnpj, String razaoSocial, String nomeFantasia, String telefone, Date dataFundacao, String email, SituacaoEmpresa situacaoEmpresa, EnderecoResponseDTO endereco) {
         this.id = id;
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;
@@ -36,11 +37,11 @@ public class EmpresaResponseDTO implements Serializable {
     public EmpresaResponseDTO() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -76,11 +77,11 @@ public class EmpresaResponseDTO implements Serializable {
         this.telefone = telefone;
     }
 
-    public LocalDate getDataFundacao() {
+    public Date getDataFundacao() {
         return dataFundacao;
     }
 
-    public void setDataFundacao(LocalDate dataFundacao) {
+    public void setDataFundacao(Date dataFundacao) {
         this.dataFundacao = dataFundacao;
     }
 

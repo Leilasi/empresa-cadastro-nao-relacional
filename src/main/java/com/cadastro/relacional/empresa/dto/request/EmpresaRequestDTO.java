@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class EmpresaRequestDTO implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class EmpresaRequestDTO implements Serializable {
     private String telefone;
 
     @NotNull(message = "O campo data fundação é obrigatório")
-    private LocalDate dataFundacao;
+    private Date dataFundacao;
 
     @NotEmpty(message = "O campo email é obrigatório")
     @Email(message = "o email informado é inválido")
@@ -45,7 +45,7 @@ public class EmpresaRequestDTO implements Serializable {
     public EmpresaRequestDTO() {
     }
 
-    public EmpresaRequestDTO(String cnpj, String razaoSocial, String nomeFantasia, String telefone, LocalDate dataFundacao, String email, SituacaoEmpresa situacaoEmpresa, EnderecoRequestDTO endereco) {
+    public EmpresaRequestDTO(String cnpj, String razaoSocial, String nomeFantasia, String telefone, Date dataFundacao, String email, SituacaoEmpresa situacaoEmpresa, EnderecoRequestDTO endereco) {
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
@@ -88,11 +88,11 @@ public class EmpresaRequestDTO implements Serializable {
         this.telefone = telefone;
     }
 
-    public LocalDate getDataFundacao() {
+    public Date getDataFundacao() {
         return dataFundacao;
     }
 
-    public void setDataFundacao(LocalDate dataFundacao) {
+    public void setDataFundacao(Date dataFundacao) {
         this.dataFundacao = dataFundacao;
     }
 

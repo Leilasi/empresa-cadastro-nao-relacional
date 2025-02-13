@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class UsuarioResponseDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private String id;
 
     private String nome;
 
@@ -18,18 +18,18 @@ public class UsuarioResponseDTO implements Serializable {
     public UsuarioResponseDTO() {
     }
 
-    public UsuarioResponseDTO(Long id, String nome, String email, PerfilUsuario perfil) {
+    public UsuarioResponseDTO(String id, String nome, String email, PerfilUsuario perfil) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.perfil = perfil;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

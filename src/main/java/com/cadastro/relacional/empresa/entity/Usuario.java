@@ -1,36 +1,25 @@
 package com.cadastro.relacional.empresa.entity;
 
 import com.cadastro.relacional.empresa.entity.enums.PerfilUsuario;
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Objects;
 
-@Entity
-@Table(name = "tb_usuario")
+@Document
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "nome", nullable = false)
+    private String id;
     private String nome;
-
-    @Column(name = "email", unique = true, nullable = false)
     private String email;
-
-    @Column(name = "senha", nullable = false)
     private String senha;
-
-    @Column(name = "perfil", nullable = false)
-    @Enumerated(EnumType.STRING)
     private PerfilUsuario perfil;
 
     public Usuario() {
     }
 
-    public Usuario(Long id, String nome, String email, String senha, PerfilUsuario perfil) {
+    public Usuario(String id, String nome, String email, String senha, PerfilUsuario perfil) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -38,11 +27,11 @@ public class Usuario {
         this.perfil = perfil;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

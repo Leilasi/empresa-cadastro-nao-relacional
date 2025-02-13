@@ -14,7 +14,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("Cadastro de Empresas")
-                        .description("Crud de empresa em banco de dados relacional.")
+                        .description("Crud de empresa em banco de dados não relacional.")
                         .contact(new Contact().name("Leila Fernanda da Silva").email("leilafernandadasilva@gmail.com"))
                         .version("1.0.0"));
     }
