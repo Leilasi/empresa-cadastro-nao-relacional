@@ -8,7 +8,6 @@ Este projeto tem como objetivo fornecer um sistema de cadastro de empresas utili
 - **Spring Data JPA**
 - **Banco Não Relacional: Mongodb**
 - **Docker**
-- **Flyway**
 - **Documentação da API: OpenAPI (Swagger)**
 - **Autenticação: Spring Security (com suporte para JWT)**
 - **Testes: JUnit e/ou Mockito para testes unitários e de integração**
@@ -34,6 +33,7 @@ O projeto segue a arquitetura **MVC (Model-View-Controller)**, garantindo separa
    ```
 4. **Acesse a aplicação**:
    - API disponível em `http://localhost:8080`
+   - Swagger: http://localhost:8080/swagger-ui/index.html
 
 ## Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir um **pull request** ou relatar problemas na aba de **issues**.
