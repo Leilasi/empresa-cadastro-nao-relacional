@@ -36,7 +36,7 @@ O projeto segue a arquitetura **MVC (Model-View-Controller)**, garantindo separa
    - Swagger: http://localhost:8080/swagger-ui/index.html
    - Mongo Express: http://localhost:8082/db/empresaDB/empresa
 
-5- Credenciais do usuário admin default para teste de autenticação:
+5- **Credenciais do usuário admin default para teste de autenticação:**
 Login: admin@gmail.com
 Senha: 123
 
