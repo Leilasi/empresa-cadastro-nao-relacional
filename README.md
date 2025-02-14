@@ -3,7 +3,7 @@
 Este projeto tem como objetivo fornecer um sistema de cadastro de empresas utilizando uma arquitetura modular e bem estruturada(MVC).
 
 ## Tecnologias Utilizadas
-- **Java**
+- **Java 17**
 - **Spring Boot**
 - **Spring Data JPA**
 - **Banco Não Relacional: Mongodb**
@@ -22,7 +22,7 @@ O projeto segue a arquitetura **MVC (Model-View-Controller)**, garantindo separa
 ## Configuração e Execução
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/Leilasi/empresa-cadastro-relacional
+   git clone https://github.com/Leilasi/empresa-cadastro-nao-relacional
    ```
 2. **Navegue até o diretório do projeto**:
    ```bash
