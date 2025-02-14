@@ -32,12 +32,12 @@ O projeto segue a arquitetura **MVC (Model-View-Controller)**, garantindo separa
    docker-compose up -d
    ```
 4. **Acesse a aplicação**:
-   - API disponível em `http://localhost:8080`
+   - API disponível em `http://localhost:8082`
    - Swagger: http://localhost:8080/swagger-ui/index.html
    - Mongo Express: http://localhost:8082/db/empresaDB/empresa
 
 5- **Credenciais do usuário admin default para teste de autenticação:**
-Login: admin@gmail.com
+Login: NoSQL
 Senha: 123
 
 ## Contribuições
